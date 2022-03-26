@@ -278,6 +278,8 @@ typedef void (^GTLRServiceTestBlock)(GTLRServiceTicket *testTicket,
  */
 @property(nonatomic, copy, nullable) NSString *APIKey;
 
+@property(nonatomic, retain, nullable) GTMSessionFetcher *fetcher;
+
 /**
  *  The Bundle Identifier to use for the API key restriction. This will be
  *  sent in an X-Ios-Bundle-Identifier header; for more information see

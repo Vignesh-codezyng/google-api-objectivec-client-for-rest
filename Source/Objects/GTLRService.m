@@ -701,8 +701,7 @@ static NSDictionary *MergeDictionaries(NSDictionary *recessiveDict, NSDictionary
   }
 
   GTMSessionFetcherService *fetcherService = ticket.fetcherService;
-  GTMSessionFetcher *fetcher;
-
+    GTMSessionFetcher *fetcher;
   if (uploadParams == nil || uploadParams.shouldUploadWithSingleRequest) {
     // Create a single-request fetcher.
     fetcher = [fetcherService fetcherWithRequest:request];
@@ -712,6 +711,7 @@ static NSDictionary *MergeDictionaries(NSDictionary *recessiveDict, NSDictionary
                                       params:uploadParams];
   }
 
+  self.fetcher = fetcher;
   if (ticket.allowInsecureQueries) {
     fetcher.allowLocalhostRequest = YES;
     fetcher.allowedInsecureSchemes = @[ @"http" ];
